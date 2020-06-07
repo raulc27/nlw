@@ -1,36 +1,20 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
+{% set pageId = "page-search-results" %}
 
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+  
+
+    {% block styles %}
+        <link rel="stylesheet" href="/styles/search-results.css">
+    {% endblock styles %}
+   
+{% block title %}
     <title>Resultado da pesquisa</title>
+{% endblock title %}
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/search-results.css">
-
-      <link rel="stylesheet" href="/styles/responsive.css">
-
-</head>
-
-<body>
-
-  <div id="page-search-results">
-
-   <!--
-
-    <header>
-        <img src="/icones/logo.svg" alt="logomarca">
-        <a href="/"> 
-            <span></span>
-            Voltar para home</a>
-    </header>
--->
-
+{# id="page-home" #}
+{% block content %}
 {% include "partials/page-header.html"   %}
 
 
@@ -79,16 +63,10 @@
 
 
 </main>
+{% endblock content %}
 
-
-</div>
-
-
+{% block scripts %}
 <script src="/script/create-point.js"></script>
-</body>
+{% endblock scripts %}
 
 
-
-
-
-</html>
