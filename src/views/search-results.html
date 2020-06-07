@@ -20,45 +20,41 @@
 
 <main>
 
+{% if total>0 %}
+
+
 <h4>
-    <strong>2 pontos</strong> encontrados
+    <strong> {{total}} pontos </strong> encontrados
 </h4>
 
     <div class="cards">
 
+    {% for place in places %}
         <div class="card">
-        <img src="https://images.unsplash.com/photo-1561435346-8a707dedd1ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Colectoria">
-        <h1>Colectoria</h1>
-        <h3>Resíduos Eletrônicos, lâmpadas</h3>
+        <img src="{{ place.image }}" alt="{{place.name}}">
+        <h1>{{place.name}}</h1>
+        <h3>{{place.items}}</h3>
         <p>
-            Rio do Sul, Santa Catarina<br/>
-            Guilherme Genrballa, Jardim América<br/>
-            N° 260
+            {{place.city}}, {{place.state}} <br/>
+            {{place.address}}  <br/>
+            {{place.adddress2}}
 
         </p>
 
         </div>
 
 
+    {% endfor %}
 
-        <div class="card">
-        <img src="https://images.unsplash.com/photo-1577369083609-051feb777894?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Papersider">
-        <h1>Papersider</h1>
-        <h3>Papéis e Papelões</h3>
-        <p>
-            Rio do Sul, Santa Catarina<br/>
-            Guilherme Genrballa, Jardim América<br/>
-            N° 260
-
-        </p>
-
-        </div>
-
-
-
-
-
+    
 </div>
+
+{%else%}
+<h4> <strong>Nenhum</strong> local encontrado</h4>
+
+{% endif %}
+
+
 
 
 

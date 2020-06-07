@@ -43,8 +43,11 @@ server.get("/search",(req,res)=>{
         if(err){
             return console.log(err)
         }
+
+        const total=rows.length;
+
         //mostrar a pagina html com o bdo
-        return res.render("search-results.html",{places:rows})
+        return res.render("search-results.html",{places:rows,total:total})
     })
 
     
