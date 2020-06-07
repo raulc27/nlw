@@ -64,19 +64,22 @@ for (const item of itemsToCollect){
     item.addEventListener("click",handleSelectedItem)
 }
 
-let selectedItems = []
+let selectedItems = [1,2,3,4,5,6]
 
 function handleSelectedItem(event){
     const itemLi=event.target;
     // adicionar ou remover uma classe com javascript
     itemLi.classList.toggle("selected");
     const itemId = itemLi.dataset.id;
-}
 
-//verificar se existe itens selecionados, se sim
+
+    //verificar se existe itens selecionados, se sim
 // pegar os itens selecionados
 
-
+const allreadySelected = selectedItems.findIndex(function(item){
+    const itemFound = item == itemId
+    return itemFound
+})
 
 //se já estiver selecionado, tirar da seleção
 
@@ -84,3 +87,6 @@ function handleSelectedItem(event){
 //se não estiver selecionado, adicionar à seleção
 
 //atualizar o campo escondido com os itens selecionados
+
+}
+
