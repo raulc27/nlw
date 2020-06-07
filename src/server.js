@@ -1,6 +1,9 @@
 const express = require("express");
 const server = express();
 
+//pegando o bdo
+const db = require("./database/db");
+
 
 
 // configurar pasta public
@@ -32,7 +35,19 @@ server.get("/create-point",(req,res)=>{
 })
 
 server.get("/search",(req,res)=>{
-    return res.render("search-results.html")
+    //pegando os dados
+
+   // consultar dados na tabela
+
+    db.all(`select * from places`,function(err,rows){
+        if(err){
+            return console.log(err)
+        }
+        //mostrar a pagina html com o bdo
+        return res.render("search-results.html",{places:rows})
+    })
+
+    
 })
 
 //ligar o servidor
