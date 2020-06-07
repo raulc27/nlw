@@ -1,0 +1,13 @@
+{
+    "name": "nlw",
+    "version": "1.0.0",
+    "description": "projeto na Next Level Week #1",
+    "main": "src/server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit "
+    },
+    "author": "Raul Castro",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
