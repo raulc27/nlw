@@ -29,10 +29,17 @@ server.get("/", (req,res)=>{
    return res.render("index.html")
 })
 
+
 server.get("/create-point",(req,res)=>{
-    //res.sendFile(__dirname+"/views/create-point.html")
+       //res.sendFile(__dirname+"/views/create-point.html")
    return res.render("create-point.html")
 })
+
+server.post("/savepoint",(req,res)=>{
+    return res.send("ok");
+})
+
+
 
 server.get("/search",(req,res)=>{
     //pegando os dados
