@@ -7,6 +7,8 @@
 
 {% block styles %}
     <link rel="stylesheet" href="/styles/create-point.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+
 {% endblock styles %}
 
 
@@ -85,7 +87,8 @@
 
             <div class="items-grid">
 
-                <li data-id="Lâmpadas" class="selected">
+                <li data-id="Lâmpadas" >
+                <!-- class="selected" -->
                     <img src="/icones/lampadas.svg" alt="Lâmpadas">
                     <span >Lâmpadas</span>
                 </li>
@@ -123,11 +126,24 @@
             <button type="submit">Cadastrar ponto de coleta</button>
         </form>
 
+
     {% endblock content %}
+
+
+
+
 
     {% block scripts %}
         <script src="/script/create-point.js"></script>
     {% endblock scripts %}
+
+
+{% block modal %}
+{% if saved %}
+    {% include "partials/point-created.html" %}
+{% endif %}
+{% endblock modal %}
+
 
 </body>
 </html>

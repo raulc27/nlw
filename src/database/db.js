@@ -6,23 +6,23 @@ const db = new sqlite3.Database("./src/database/database.db");
 
 module.exports=db;
 
-// //utilizar o objeto de bdo para nossas operações
-// db.serialize(()=>{
-//     //criar uma tabela
+//utilizar o objeto de bdo para nossas operações
+db.serialize(()=>{
+    //criar uma tabela
 
-//     db.run(`
-//         create table if not exists places (
-//             id integer primary key autoincrement,
-//             image text,
-//             name text,
-//             address text,
-//             address2 text,
-//             state text,
-//             city, text,
-//             items text
-//         );
+    db.run(`
+        create table if not exists places (
+            id integer primary key autoincrement,
+            image text,
+            name text,
+            address text,
+            address2 text,
+            state text,
+            city text,
+            items text
+        );
 
-//     `)
+    `)
 
 //     //inserir dados na tabela
 
@@ -76,4 +76,7 @@ module.exports=db;
 //         }
 //         console.log("Registro deletado com sucesso!");
 //     });
-// })
+
+
+
+})
