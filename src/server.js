@@ -70,7 +70,7 @@ server.post("/savepoint",(req,res)=>{
 
     function afterInsertData(err){
         if(err){
-            return console.log(err);
+            return res.send(err);
         }
 
         console.log("Cadastrado com sucesso")
@@ -87,11 +87,19 @@ server.post("/savepoint",(req,res)=>{
 
 
 server.get("/search",(req,res)=>{
+   
+   const search=req.query.search
+
+ if(search==""){
+       //pesqusa vazia
+       return res.render("search-results.html",{total:0})
+
+   }
     //pegando os dados
 
    // consultar dados na tabela
 
-    db.all(`select * from places`,function(err,rows){
+    db.all(`select * from places where city like '%${search}%'`,function(err,rows){
         if(err){
             return console.log(err)
         }
