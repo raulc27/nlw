@@ -90,11 +90,11 @@ server.get("/search",(req,res)=>{
    
    const search=req.query.search
 
- if(search==""){
+ /* if(search==""){
        //pesqusa vazia
        return res.render("search-results.html",{total:0})
 
-   }
+   }*/
     //pegando os dados
 
    // consultar dados na tabela
@@ -107,6 +107,7 @@ server.get("/search",(req,res)=>{
         const total=rows.length;
 
         //mostrar a pagina html com o bdo
+       
         return res.render("search-results.html",{places:rows,total:total})
     })
 

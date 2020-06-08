@@ -9,7 +9,7 @@ function populateUFs(){
     .then(states => {
 
         for(const state of states){
-            ufSelect.innerHTML+=`<option value="${state.id}">${state.nome}</option>`
+          ufSelect.innerHTML+=`<option value="${state.id}">${state.nome}</option>`
 
         }
 
@@ -29,7 +29,7 @@ function getCities(event){
     stateInput.value=event.target.options[indexOfSelectedState].text;
 
 
-    const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`
+    const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios?orderBy=nome`
 
     citySelect.innerHTML="<option>Selecione a cidade</option>"
     citySelect.disabled=true;
@@ -41,7 +41,7 @@ function getCities(event){
         
 
         for(const city of cities){
-           citySelect.innerHTML+=`<option value="${city.id}">${city.nome}</option>`
+           citySelect.innerHTML+=`<option value="${city.nome}">${city.nome}</option>`
 
         }
 
